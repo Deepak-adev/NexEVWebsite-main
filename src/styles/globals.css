@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-[#000B1D] text-white overflow-x-hidden cursor-none;
+  }
+
+  * {
+    @apply cursor-none;
+  }
+}
+
+.container {
+  @apply mx-auto max-w-[1280px];
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#000B1D];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/20;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 hover:bg-blue-700;
+  }
+  
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+  
+  .container-width {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Base mobile styles */
+  html {
+    font-size: 14px;
+  }
+
+  /* Improve touch targets */
+  button, 
+  a, 
+  input, 
+  select, 
+  textarea {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Adjust spacing for mobile */
+  .section-padding {
+    @apply py-16;
+  }
+
+  /* Improve text readability */
+  h1 {
+    @apply text-4xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl leading-tight;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  /* Optimize form elements for mobile */
+  input, 
+  textarea, 
+  select {
+    @apply text-base py-3 px-4;
+  }
+
+  /* Improve button sizes for touch */
+  .btn-primary {
+    @apply px-6 py-3 text-base;
+  }
+
+  /* Optimize grid layouts for mobile */
+  .grid {
+    @apply gap-4;
+  }
+
+  /* Improve card layouts for mobile */
+  .card {
+    @apply p-4;
+  }
+
+  /* Optimize navigation for mobile */
+  nav {
+    @apply px-4;
+  }
+
+  /* Improve spacing between sections */
+  section {
+    @apply mb-8;
+  }
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section-padding {
+    @apply py-20;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+}
